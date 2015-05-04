@@ -85,7 +85,17 @@ var _ = (function() {
 		// => [4, 1, 6, 3, 5, 2]
 
 		shuffle : function(arr){
-
+			var i = 0;
+			var temp;
+			console.log("hi");
+			while (i<arr.length)
+			{
+				var randIndex = Math.floor(Math.random() * (arr.length - 1));
+				temp = arr[i];
+				arr[i] = arr[randIndex];
+				arr[randIndex] = temp;
+				i++;
+			}
 			return arr;
 		},
 
@@ -188,10 +198,11 @@ var _ = (function() {
 	// => one random number from above array
 	console.log(_.sample([1, 2, 3, 4, 5, 6], 3));
 	// => three random numbers from above array
-	console.log(_.difference([1, 2, 3, 4, 5], [5, 2, 10])); // PROBLEM
+	console.log(_.difference([1, 2, 3, 4, 5], [5, 2, 10]));
 	// => [1, 3, 4]
 	console.log(_.indexOf([1, 2, 3], 2));
 	// => 1
 	var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}];
 	console.log(_.pluck(stooges, 'name'));
 	// => ["moe", "larry", "curly"]
+	console.log(_.shuffle([1, 2, 3, 4, 5, 6]));
