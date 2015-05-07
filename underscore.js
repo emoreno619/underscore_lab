@@ -236,38 +236,40 @@ var _ = (function() {
 		};
 	})();
 
-	console.log(_.average([4,6,1,1]));
-	// => 3
-	console.log(_.contains([7,55,99], 99));
-	// => true
-	console.log(_.first([5, 4, 3, 2, 1]));
-	// => 5
-	console.log(_.last([5, 4, 3, 2, 1]));
-	// => 1
-	console.log(_.max([5, 400, 3, 1200, 1]));
-	// => 1200
-	console.log(_.min([5, 400, 3, 1200, 1]));
-	// => 1
-	console.log(_.sample([1, 2, 3, 4, 5, 6]));
-	// => one random number from above array
-	console.log(_.sample([1, 2, 3, 4, 5, 6], 3));
-	// => three random numbers from above array
-	console.log(_.difference([1, 2, 3, 4, 5], [5, 2, 10]));
-	// => [1, 3, 4]
-	console.log(_.indexOf([1, 2, 3], 2));
-	// => 1
-	var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}];
-	console.log(_.pluck(stooges, 'name'));
-	// => ["moe", "larry", "curly"]
-	console.log(_.shuffle([1, 2, 3, 4, 5, 6]));
+	module.exports = _;
 
-	// console.log(_.each([1, 2, 3], alert));
-	// => alerts each number in turn...
-	console.log(_.compact([1, "hello", undefined, 3, undefined]));
-	// => [1, "hello", 3]
-	console.log(_.map([1, 2, 3], function(num){ return num * 3; }));
-	// => [3, 6, 9]
-	console.log(_.map(["dogs", "before", "cats"], function(str){ return str.toUpperCase(); }));
-	// => ["DOGS", "BEFORE", "CATS"]
-	console.log(_.filter([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; }));
-	// => [2, 4, 6]
+	// console.log(_.average([4,6,1,1]));
+	// // => 3
+	// console.log(_.contains([7,55,99], 99));
+	// // => true
+	// console.log(_.first([5, 4, 3, 2, 1]));
+	// // => 5
+	// console.log(_.last([5, 4, 3, 2, 1]));
+	// // => 1
+	// console.log(_.max([5, 400, 3, 1200, 1]));
+	// // => 1200
+	// console.log(_.min([5, 400, 3, 1200, 1]));
+	// // => 1
+	// console.log(_.sample([1, 2, 3, 4, 5, 6]));
+	// // => one random number from above array
+	// console.log(_.sample([1, 2, 3, 4, 5, 6], 3));
+	// // => three random numbers from above array
+	// console.log(_.difference([1, 2, 3, 4, 5], [5, 2, 10]));
+	// // => [1, 3, 4]
+	// console.log(_.indexOf([1, 2, 3], 2));
+	// // => 1
+	// var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}];
+	// console.log(_.pluck(stooges, 'name'));
+	// // => ["moe", "larry", "curly"]
+	// console.log(_.shuffle([1, 2, 3, 4, 5, 6]));
+
+	// // console.log(_.each([1, 2, 3], alert));
+	// // => alerts each number in turn...
+	// console.log(_.compact([1, "hello", undefined, 3, undefined]));
+	// // => [1, "hello", 3]
+	// console.log(_.map([1, 2, 3], function(num){ return num * 3; }));
+	// // => [3, 6, 9]
+	// console.log(_.map(["dogs", "before", "cats"], function(str){ return str.toUpperCase(); }));
+	// // => ["DOGS", "BEFORE", "CATS"]
+	// console.log(_.filter([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; }));
+	// // => [2, 4, 6]
