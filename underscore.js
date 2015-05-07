@@ -87,7 +87,6 @@ var _ = (function() {
 		shuffle : function(arr){
 			var i = 0;
 			var temp;
-			console.log("hi");
 			while (i<arr.length)
 			{
 				var randIndex = Math.floor(Math.random() * (arr.length - 1));
@@ -178,7 +177,62 @@ var _ = (function() {
 					valueArr.push(arr[i][key]);
 			}
 			return valueArr;
+		},
+
+
+		//     each - iterates over an array and calls a given function with each element
+
+		// _.each([1, 2, 3], alert);
+		// => alerts each number in turn...
+
+		each : function(arr, event) {
+				arr.forEach(event);
+				//for (var i = 0; i < arr.length; i++){ event(arr[i]);}
+		},
+
+		//     compact - returns a new array with all provided undefined values removed
+
+		// _.compact([1, "hello", undefined, 3, undefined]);
+		// => [1, "hello", 3]
+
+		compact : function(arr) {
+				for (var i = 0; i < arr.length; i++){
+					if (!arr[i])
+						arr.splice(i, 1);
+				}
+				return arr;
+		},
+
+		//     map - returns a new array of values produced by running each element of an array through a given function
+
+		// _.map([1, 2, 3], function(num){ return num * 3; });
+		// => [3, 6, 9]
+
+		// _.map(["dogs", "before", "cats"], function(str){ return str.toUpperCase(); });
+		// => ["DOGS", "BEFORE", "CATS"]
+
+		map : function(array, event) {
+			var resultArr = [];
+			for (var i = 0; i < array.length; i++){
+				resultArr[i] = event(array[i]);
+			}
+			return resultArr;
+		},
+
+		//     filter - Looks through each value in the list, returning an array of all the values that pass a truth test
+
+		// var evens = _.filter([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
+		// => [2, 4, 6]
+
+		filter : function(array, truthTest) {
+			var resultArr = [];
+			for (var i = 0; i < array.length; i++){
+				if(truthTest(array[i]))
+					resultArr.push(array[i]);
+			}
+			return resultArr;
 		}
+
 		};
 	})();
 
@@ -206,3 +260,14 @@ var _ = (function() {
 	console.log(_.pluck(stooges, 'name'));
 	// => ["moe", "larry", "curly"]
 	console.log(_.shuffle([1, 2, 3, 4, 5, 6]));
+
+	// console.log(_.each([1, 2, 3], alert));
+	// => alerts each number in turn...
+	console.log(_.compact([1, "hello", undefined, 3, undefined]));
+	// => [1, "hello", 3]
+	console.log(_.map([1, 2, 3], function(num){ return num * 3; }));
+	// => [3, 6, 9]
+	console.log(_.map(["dogs", "before", "cats"], function(str){ return str.toUpperCase(); }));
+	// => ["DOGS", "BEFORE", "CATS"]
+	console.log(_.filter([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; }));
+	// => [2, 4, 6]
